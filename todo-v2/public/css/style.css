@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+/*li {
+  border: 1px solid #adadad;
+}*/
+.main {
+  margin: 40px auto !important;
+  float: none !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+.hidetask {
+  display: none;
+}
