@@ -28,13 +28,15 @@ var todo = [{
 // eslint-disable-next-line
 var App = React.createClass({
   render: () => {
+
+    document.getElementsByTagName('body')[0].setAttribute("class", "yellow accent-3");
     return (
       <Row>
-        <h1>Create your plans</h1>
-        <Col l={6} m={8} s={12} className="main">
-        <NewTodo/>
-        <Todo data={todo}/>
-      </Col>
+        <Col l={6} m={8} s={12} className="main z-depth-5">
+          <h1>Create your plans</h1>
+          <NewTodo/>
+          <Todo data={todo}/>
+        </Col>
     </Row>
     )
   }

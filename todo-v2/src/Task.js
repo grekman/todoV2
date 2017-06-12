@@ -20,6 +20,7 @@ var Task = React.createClass({
   },
 
   readmoreClick: function(e) {
+    console.log(e);
     e.preventDefault();
     this.setState({visible:true});
     console.log('yee');
@@ -31,13 +32,13 @@ var Task = React.createClass({
         visible = this.state.visible;
 
     return (
-      <CollectionItem className={(visible ? 'hidetask': 'valign-wrapper')} style={{padding:"0 10px"}}>
+      <CollectionItem className={(visible ? 'hidetask': 'valign-wrapper yellow lighten-2')} style={{padding:"0 10px"}}>
         <input type="checkbox" className="filled-in" id={task} style={{display:"inline-block"}}/>
         <label htmlFor={task}>{task}</label>
-        <p className="valign-wrapper" style={{marginLeft:"20px"}}>Total time is: {time}
-        <Icon right small className="material-icons right-align" style={{cursor:"pointer", lineHeight:"2"}}>play_arrow</Icon>
-        <Icon right small onClick = {this.readmoreClick } className="close material-icons right-align" style={{cursor:"pointer", lineHeight:"2"}}>close</Icon>
-      </p>
+        <p className="valign-wrapper" style={{marginLeft:"20px"}}>Total time is: {time} </p>
+        <Icon className="material-icons" style={{cursor:"pointer", lineHeight:"2"}}>play_circle_outline</Icon>
+        <p className  = "p-icon" onClick = {this.readmoreClick }><Icon  className="close material-icons">close</Icon></p>
+
       </CollectionItem>
     )
   }
