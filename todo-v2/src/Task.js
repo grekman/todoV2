@@ -13,7 +13,7 @@ var Task = React.createClass({
     })
   },
 
-  getInitialState: function() {
+  getInitialState: () => {
     return {
       visible: false
     };
@@ -27,17 +27,21 @@ var Task = React.createClass({
   },
 
   render: function() {
-    var task = this.props.data.task,
+    let task = this.props.data.task,
         time = this.props.data.time,
         visible = this.state.visible;
 
     return (
-      <CollectionItem className={(visible ? 'hidetask': 'valign-wrapper yellow lighten-2')} style={{padding:"0 10px"}}>
+      <CollectionItem className={(visible ? 'hidetask':'valign-wrapper yellow lighten-2')} style={{padding:"0 10px"}}>
         <input type="checkbox" className="filled-in" id={task} style={{display:"inline-block"}}/>
         <label htmlFor={task}>{task}</label>
-        <p className="valign-wrapper" style={{marginLeft:"20px"}}>Total time is: {time} </p>
-        <Icon className="material-icons" style={{cursor:"pointer", lineHeight:"2"}}>play_circle_outline</Icon>
-        <p className  = "p-icon" onClick = {this.readmoreClick }><Icon  className="close material-icons">close</Icon></p>
+        <p className="valign-wrapper" style={{marginLeft:"auto"}}>Total time is: {time} </p>
+        <div className="p-icon">
+          <Icon className="start material-icons">play_circle_outline</Icon>
+        </div>
+        <div className="p-icon" onClick={this.readmoreClick }>
+          <Icon  className="close material-icons">close</Icon>
+        </div>
 
       </CollectionItem>
     )

@@ -3,7 +3,7 @@ import React from 'react'
 
 // eslint-disable-next-line
 var NewTodo = React.createClass({
-  render: function() {
+  render: () => {
     return (
               <div className="input-field">
                 <input id="task" type="text" className="validate"/>
